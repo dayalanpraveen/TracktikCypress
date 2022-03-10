@@ -1,0 +1,40 @@
+{
+    "extends": [
+        "plugin:cypress/recommended"
+      ],
+    "plugins": [
+        "cypress"
+    ],
+    "ignorePatterns": [
+        "app/assets/js/vendor/*",
+        "node_modules/*"
+    ],
+    "env": {
+        "cypress/globals": true,
+        "es6": true,
+        "browser": true
+    },
+    "rules": {
+        "linebreak-style": 0,
+        "eol-last": 2,
+        "indent": [
+            "error",
+            2,
+            {
+                "SwitchCase": 1,
+                "MemberExpression": "off"
+            }
+        ],
+        "no-unused-expressions": "error",
+        "spaced-comment": [
+            "error",
+            "always",
+            {
+                "markers": [
+                    "/"
+                ]
+            }
+        ],
+        "no-undef": "off"
+    }
+}
