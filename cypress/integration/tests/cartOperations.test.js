@@ -1,6 +1,5 @@
 import {landingPageUrl, productToSearch
-  , signInUrl, userName, password, baseUrl, 
-  cartRemovedText } from '../../fixtures/route';
+  , signInUrl, userName, password, baseUrl } from '../../fixtures/route';
 
 describe('Login test', () => {
   it('validate sign_in', () => {
