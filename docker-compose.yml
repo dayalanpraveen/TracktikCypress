@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+   e2eCachrome:
+    image: cypress
+    build: .
+    container_name: cypress-chrome-ca
+    command: npm run cypress:chrome:ca:test
+    volumes:
+      - ./cypress:/app/cypress
+      - ./cypress.json:/app/cypress.json
+  
+   e2ecafirefox:
+    image: cypress
+    build: .
+    container_name: cypress-firefox-ca
+    command: npm run cypress:firefox:ca:test
+    volumes:
+      - ./cypress:/app/cypress
+      - ./cypress.json:/app/cypress.json
+  

@@ -1,0 +1,12 @@
+node_modules
+
+#cypress
+cypress/reports/*
+mochawesome-report/*
+cypress/screenshots/*
+cypress/videos/*
+
+#mocha-reporter
+xunit.xml
+
+cypress.json
