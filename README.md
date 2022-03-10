@@ -47,4 +47,7 @@ Run this command: npm install
       "mochawesome-report-generator" - used for generating html report
       "npm-run-all" - used to run all npm script commands in a single run
 
+   # Page Object Model: 
+    I have followed cypress way of defining a page object model(APP Actions) as cypress claims using the default Page object model as an antipattern https://www.cypress.io/blog/2019/01/03/stop-using-page-objects-and-start-using-app-actions/ 
+
 

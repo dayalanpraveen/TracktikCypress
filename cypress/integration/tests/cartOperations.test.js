@@ -14,7 +14,7 @@ describe('Login test', () => {
     cy.verify_search_product(productToSearch);
     cy.Verify_add_product_to_cart('1');
     cy.verify_go_to_cart();
-    cy.verify_delete_cart(cartRemovedText);
+    cy.verify_delete_product();
   })
 
   it('validate sign_out', () => {
