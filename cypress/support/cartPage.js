@@ -28,6 +28,12 @@ Cypress.Commands.add('verify_delete_cart', (expectedMessage) => {
   productImageElement().should('be.visible').then(() => {
     deleteButtonElement().should('be.visible').click().then(() => {
       productImageElement().should('not.exist');
+      /** Tried cy.intercept() and cy.waituntill() methods to fix the time to load
+       * Chrome has no issues
+       * issue is happening only on firefox. So had to use cy.wait() 
+       */
+      // eslint-disable-next-line cypress/no-unnecessary-waiting
+      cy.wait(3000);
       emptyCartTextElement().should('be.visible').then(($el) => {
         const emptyCartText = $el.text();
         expect(emptyCartText).to.include(expectedMessage);

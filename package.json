@@ -1,4 +1,7 @@
 {
+  "name": "tracktik-cypress-automation-challenge",
+  "version": "1.0.0",
+  "description": "Cypress Automation for amazon site",
   "scripts": {
     "headless:chrome:run:ca": "cypress run --headless --browser chrome --config-file cypress/config/cypress.ca.json --spec 'cypress/integration/tests/**/*'",
     "headless:chrome:run:com": "cypress run --headless --browser chrome --config-file cypress/config/cypress.com.json --spec 'cypress/integration/tests/**/*'",
@@ -15,6 +18,16 @@
     "cypress:chrome:com:test": "npm-run-all --serial --continue-on-error clean:reports headless:chrome:run:com merge:reports generate:html:report",
     "lint": "npx eslint cypress/**/*.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dayalanpraveen/TracktikCypress"
+  },
+  "author": "praveen dayalan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dayalanpraveen/TracktikCypress/issues"
+  },
+  "homepage": "https://github.com/dayalanpraveen/TracktikCypress#readme",
   "devDependencies": {
     "cypress": "^9.5.1",
     "cypress-multi-reporters": "^1.5.0",

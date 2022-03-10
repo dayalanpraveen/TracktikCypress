@@ -5,8 +5,8 @@
     "env": {
         "baseUrl": "https://www.amazon.ca",
         "landingUrl": "https://www.amazon.ca/?ref_=nav_ya_signin&",
-        "userName": "",
-        "password": ""
+        "userName": "praveen.9176399619@gmail.com",
+        "password": "Omicron@2022"
     },
     "reporter": "cypress-multi-reporters",
     "reporterOptions": {
