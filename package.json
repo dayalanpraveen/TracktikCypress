@@ -1,0 +1,29 @@
+{
+  "scripts": {
+    "headless:chrome:run:ca": "cypress run --headless --browser chrome --config-file cypress/config/cypress.ca.json --spec 'cypress/integration/tests/**/*'",
+    "headless:chrome:run:com": "cypress run --headless --browser chrome --config-file cypress/config/cypress.com.json --spec 'cypress/integration/tests/**/*'",
+    "headless:firefox:run:ca": "cypress run --headless --browser firefox --config-file cypress/config/cypress.ca.json --spec 'cypress/integration/tests/**/*'",
+    "headless:firefox:run:com": "cypress run --headless --browser firefox --config-file cypress/config/cypress.com.json --spec 'cypress/integration/tests/**/*'",
+    "cypress:open:ca": "cypress open --config-file cypress/config/cypress.ca.json",
+    "cypress:open:com": "cypress open --config-file cypress/config/cypress.com.json",
+    "clean:reports": "rimraf cypress\\reports && mkdir cypress\\reports && mkdir cypress\\reports\\mochareports",
+    "merge:reports": "mochawesome-merge mochawesome-report/*.json > cypress/reports/mochareports/report.json",
+    "generate:html:report": "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
+    "cypress:chrome:ca:test": "npm-run-all --serial --continue-on-error clean:reports headless:chrome:run:ca merge:reports generate:html:report",
+    "cypress:firefox:ca:test": "npm-run-all --serial --continue-on-error clean:reports headless:firefox:run:ca merge:reports generate:html:report",
+    "cypress:firefox:com:test": "npm-run-all --serial --continue-on-error clean:reports headless:firefox:run:com merge:reports generate:html:report",
+    "cypress:chrome:com:test": "npm-run-all --serial --continue-on-error clean:reports headless:chrome:run:com merge:reports generate:html:report",
+    "lint": "npx eslint cypress/**/*.js"
+  },
+  "devDependencies": {
+    "cypress": "^9.5.1",
+    "cypress-multi-reporters": "^1.5.0",
+    "cypress-wait-until": "^1.7.2",
+    "eslint": "^8.10.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "mochawesome": "^7.1.2",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.1.1",
+    "npm-run-all": "^4.1.5"
+  }
+}
